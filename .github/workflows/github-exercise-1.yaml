@@ -5,7 +5,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: checkout code
-        uses: action/checkout@v3
+        uses: action/checkout@v7
       - name: install dependencies
         run: npm ci
         working-directory: ./04 Practice Project (Start)/
