@@ -8,6 +8,7 @@ jobs:
         uses: action/checkout@v3
       - name: install dependencies
         run: npm ci
+        working-directory: ./04 Practice Project (Start)/
       - name: run lint
         run: npm run lint
   test:
