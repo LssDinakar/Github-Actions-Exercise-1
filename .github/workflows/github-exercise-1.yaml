@@ -5,31 +5,36 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: checkout code
-        uses: action/checkout@v7
+        uses: action/checkout@v4
       - name: install dependencies
         run: npm ci
         working-directory: ./04 Practice Project (Start)/
       - name: run lint
         run: npm run lint
+        working-directory: ./04 Practice Project (Start)/        
   test:
     needs: lint
     runs-on: ubuntu-latest
     steps:
       - name: checkout code
-        uses: action/checkout@v3
+        uses: action/checkout@v4
       - name: install dependencies
         run: npm ci
+        working-directory: ./04 Practice Project (Start)/        
       - name: run tests
         run: npm run test
+        working-directory: ./04 Practice Project (Start)/        
   deploy:
     needs: test
     runs-on: ubuntu-latest
     steps:
       - name: checkout code
-        uses: action/checkout@v3
+        uses: action/checkout@v4
       - name: install dependencies
         run: npm ci
+        working-directory: ./04 Practice Project (Start)/        
       - name: build code
         run: npm run build
       - name: deploy code
+        working-directory: ./04 Practice Project (Start)/      
         run: echo "Deploying:"
